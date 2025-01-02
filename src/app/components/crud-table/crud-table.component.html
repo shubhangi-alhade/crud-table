@@ -1,14 +1,10 @@
-<div style="display: flex; flex-direction: column; gap: 20px;">
-
-  <!-- PrimeNG Table -->
-  <div>
-    <h3>PrimeNG Table</h3>
 <p-table [value]="items" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
   <ng-template pTemplate="header">
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Email</th>
+      <th>Price</th>
+      <th>Category</th>
       <th>Actions</th>
     </tr>
   </ng-template>
@@ -16,7 +12,8 @@
     <tr>
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
-      <td>{{ item.email }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.category }}</td>
       <td>
         <button (click)="editItem(item)" style="margin-right: 8px;">Edit</button>
         <button (click)="deleteItem(item.id)">Delete</button>
@@ -24,40 +21,4 @@
     </tr>
   </ng-template>
 </p-table>
-</div>
-
-<!-- Regular HTML Table -->
-<div>
-  <h3>Regular HTML Table</h3>
-
-<table border="1" style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 20px;">
-  <thead>
-    <tr>
-      <th style="padding: 8px;">ID</th>
-      <th style="padding: 8px;">Name</th>
-      <th style="padding: 8px;">Email</th>
-      <th style="padding: 8px;">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items">
-      <td style="padding: 8px;">{{ item.id }}</td>
-      <td style="padding: 8px;">{{ item.name }}</td>
-      <td style="padding: 8px;">{{ item.email }}</td>
-      <td style="padding: 8px;">
-        <button (click)="editItem(item)" style="margin-right: 8px;">Edit</button>
-        <button (click)="deleteItem(item.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-<!-- Add Item Button
-<button (click)="addItem()" style="margin-top: 10px;">Add Item</button> -->
-
-<!-- Add Item Button -->
-<div style="margin-top: 20px;">
-  <button (click)="addItem()">Add Item</button>
-</div>
+<button (click)="addItem()" style="margin-top: 10px;">Add Item</button>
