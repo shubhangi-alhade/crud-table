@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+//import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { ChartModule } from 'primeng/chart';
 
 // ngx-charts
 //import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -33,11 +36,13 @@ import { MessageService } from 'primeng/api';
     ButtonModule,
     DialogModule,
     InputTextModule,
-    ToastModule,
+    ChartModule // Import the ChartModule here
+    //ToastModule,
    // NgxChartsModule,
-    AppRoutingModule
+   // AppRoutingModule
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   bootstrap: [AppComponent]
 })
 export class AppModule { }
